@@ -1,19 +1,15 @@
-<div class="page-header">
-  <h3><%=@user.username %>'s photos</h3>
-</div>
-
 
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
     <dl class="jumbotron">
-      <% @user.photos.each do |photo| %>
+      <% @my_likes.each do |like | %>
       <div class="panel-heading">
       <dt >Caption</dt>
-      <dd><%= photo.caption %></dd>
+      <dd><%= like.photo.caption %></dd>
     </div>
     <div class="panel-body">
       <dt>Image</dt>
-      <dd><img class="img-responsive" src="<%=photo.image %>"></dd>
+      <dd><img class="img-responsive" src="<%=like.photo.image %>"></dd>
     </div>
   <%end%>
     </dl>
